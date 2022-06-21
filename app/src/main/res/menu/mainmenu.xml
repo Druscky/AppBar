@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/meCopiar"
+        android:title="copiar"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_copiar"/>
+    <item
+        android:id="@+id/mePegar"
+        android:title="refrescar"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_refrescar"
+        />
+    <item
+        android:id="@+id/meSeleccionar"
+        android:title="buscar"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_buscar"/>
+    <item android:title="Item" />
+
+</menu>
