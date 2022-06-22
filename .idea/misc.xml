@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/drawable-anydpi/ic_Sombrilla.xml" value="0.348" />
         <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/layout/activity_main.xml" value="0.25407608695652173" />
+        <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/layout/activity_resultado.xml" value="0.2028985507246377" />
+        <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/layout/activity_resultado_buscar.xml" value="0.2028985507246377" />
+        <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/layout/activity_resultado_copiar.xml" value="0.2028985507246377" />
+        <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/layout/activity_resultado_refrescar.xml" value="0.2028985507246377" />
         <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/menu/contextual_menu.xml" value="0.365625" />
         <entry key="..\:/AndroidStudioProject/AppBar/app/src/main/res/menu/mainmenu.xml" value="0.365625" />
       </map>

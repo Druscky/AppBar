@@ -6,13 +6,13 @@
         android:id="@+id/meCopiar"
         android:title="copiar"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/ic_copiar"/>
     <item
         android:id="@+id/mePegar"
         android:title="refrescar"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/ic_refrescar"
         />
     <item

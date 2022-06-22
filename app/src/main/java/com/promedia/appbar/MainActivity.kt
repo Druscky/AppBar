@@ -1,5 +1,6 @@
 package com.promedia.appbar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -10,6 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        val ID_MENU1 = Menu.FIRST
+        val ID_MENU2 = Menu.FIRST+1
+        val ID_MENU3 = Menu.FIRST+2
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,20 +30,52 @@ class MainActivity : AppCompatActivity() {
 
         val vista = findViewById<TextView>(R.id.tvHelloWorld) as TextView
         registerForContextMenu(vista)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menu.add(Menu.NONE, ID_MENU1, Menu.NONE, "Copiar")
+        menu.add(Menu.NONE, ID_MENU2, Menu.NONE, "Refrescar")
+        menu.add(Menu.NONE, ID_MENU3, Menu.NONE, "Buscar" )
+
         menuInflater.inflate(R.menu.mainmenu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
         when (item.itemId) {
-            R.id.meSeleccionar -> Toast.makeText(this, "Buscando...", Toast.LENGTH_SHORT).show()
-            R.id.mePegar -> Toast.makeText(this, "Refrescando...", Toast.LENGTH_SHORT).show()
-            R.id.meCopiar -> Toast.makeText(this, "Copiando...", Toast.LENGTH_SHORT).show()
+            ID_MENU1 -> {
+                val myIntentCopiar = Intent(this, ResultadoCopiar::class.java)
+                myIntentCopiar.putExtra("INTENT_COPIAR", ID_MENU1)
+                startActivity(myIntentCopiar)
+            }
+            ID_MENU2 ->{
+                val myIntentRefrescar = Intent(this, ResultadoRefrescar::class.java)
+                myIntentRefrescar.putExtra("INTENT_REFRESCAR", ID_MENU2)
+                startActivity(myIntentRefrescar)
+            }
+            ID_MENU3 -> {
+                val myIntentBuscar = Intent(this, ResultadoBuscar::class.java)
+                myIntentBuscar.putExtra("INTENT_BUSCAR", ID_MENU3)
+                startActivity(myIntentBuscar)
+            }
+            R.id.meSeleccionar ->{
+                Toast.makeText(this, "Buscando...", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.mePegar ->{
+                Toast.makeText(this, "Refrescando...", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.meCopiar ->{
+                Toast.makeText(this, "Copiando...", Toast.LENGTH_SHORT).show()
+                return true
+            }
         }
-        return super.onOptionsItemSelected(item)
+        return false
+
+
     }
 
     override fun onCreateContextMenu(
@@ -60,5 +98,6 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
+
 
 }
